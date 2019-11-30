@@ -10,8 +10,9 @@ class Searchbar extends Component {
         }
     }
 
-    // use that input to make the API call
+    // use user input to pass a query param to API call
     searchForImages = (event) => {
+        // this method is an onSubmit event handler, so must prevent default of page refresh
         event.preventDefault();
 
         axios({
@@ -48,7 +49,7 @@ class Searchbar extends Component {
             <div className="form-wrapper">
                 <form onSubmit={this.searchForImages}>
                     <label htmlFor="search" className="visuallyHidden">What images do you want to search for?</label>
-                    <input id="search" value={this.state.searchTerm} onChange={this.getUserInput}/>
+                    <input id="search" onChange={this.getUserInput} placeholder="Search for an image"/>
                 </form>
             </div>
 

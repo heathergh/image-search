@@ -6,7 +6,7 @@ const ImageCard = ({id, url, alt, name, profileUrl}) => {
         <a href={`${url}`}>
           <img src={`${url}`} alt={`${alt}`} id={id}/>
         </a>
-        <p>Photo by <a href={`${profileUrl}`}>{name}</a></p>
+        <p className="photo-credit">Photo by <a href={`${profileUrl}`}>{name}</a></p>
       </>
     )
 

@@ -3,7 +3,6 @@ import ImageCard from './ImageCard';
 import DownloadLink from './DownloadLink';
 
 const ImageList = props => {
-    console.log("ImageList Props: ", props)
     return (
         <>
             {props.searchResults.map((image, index) => {

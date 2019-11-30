@@ -9,7 +9,6 @@ class App extends Component {
     super();
     this.state = {
       images: [],
-      searchTerm: '',
     }
   }
 
@@ -21,15 +20,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <>
         <Header />
-        <Searchbar userSearchSubmit={this.getNewImages} />
-        <section>
-          <ul>
-            <ImageList searchResults={this.state.images}/>
-          </ul>
-        </section>
-      </div>
+        <main className="wrapper">
+        	<Searchbar userSearchSubmit={this.getNewImages} />
+        	<section className="image-list-wrapper">
+        	  <ul>
+        	    <ImageList searchResults={this.state.images}/>
+        	  </ul>
+        	</section>
+        </main>
+      </>
     )
   }
 }
