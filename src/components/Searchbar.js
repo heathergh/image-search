@@ -22,8 +22,7 @@ class Searchbar extends Component {
               Authorization: 'Client-ID c7e460e950c6ce50f9be85a30ccb19fb6ae9997faeea7dade15fdb1f30b331a8',
             },
             params: {
-            //   query: this.state.searchTerm
-              query: 'cat'
+              query: this.state.searchTerm
             }
           }).then(result => {
             

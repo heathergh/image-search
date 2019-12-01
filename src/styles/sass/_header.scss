@@ -2,8 +2,6 @@
 
 @include mq-mobile {
     header {
-        display: flex;
-        justify-content: center;
         text-align: center;
         margin: 0;
         h1 {
@@ -11,7 +9,7 @@
             -webkit-text-fill-color: transparent;
             -webkit-text-stroke-width: 5px;
             -webkit-text-stroke-color: transparent;
-            text-shadow: 0 20px $headerLightShadow, 7px 23px $headerDarkShadow;
+            text-shadow: 5px  20px $headerLightShadow, 7px 23px $headerDarkShadow;
         }
     }
 }

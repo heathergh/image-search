@@ -29,8 +29,7 @@
         border: 1px solid ;
         border-radius: 8px;
         height: 30px;
-        min-width: 280px;
-        max-width: 600px;
+        width: 280px;
         &:focus {
             box-shadow: 0 0 5px $focusColor;
             border: 1px solid $focusColor;
@@ -39,5 +38,17 @@
             color: $placeholderFontColor;
             font-size: $mobileFontSize;
         }
+    }
+}
+           
+@include mq-tablet {
+    input {
+        width: 500px;
+    }
+}     
+
+@include mq-desktop {
+    input {
+        width: 600px;
     }
 }

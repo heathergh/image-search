@@ -184,10 +184,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 @media (min-width: 320px) {
   html {
     font-size: 55%;
-    color: #02020a;
+    color: #2f394d;
   }
   body {
-    background: #fefdff;
+    background: #f18f01;
     margin: 20px;
   }
   h1 {
@@ -223,12 +223,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @media (min-width: 320px) {
   header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     text-align: center;
     margin: 0;
   }
@@ -237,7 +231,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: transparent;
-    text-shadow: 0 20px #a5c4d4, 7px 23px #0d1321;
+    text-shadow: 5px 20px #80ded9, 7px 23px #0d1321;
   }
 }
 
@@ -270,13 +264,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     border: 1px solid;
     border-radius: 8px;
     height: 30px;
-    min-width: 280px;
-    max-width: 600px;
+    width: 280px;
   }
   input:focus {
-    -webkit-box-shadow: 0 0 5px #1e91d6;
-            box-shadow: 0 0 5px #1e91d6;
-    border: 1px solid #1e91d6;
+    -webkit-box-shadow: 0 0 5px #2e86ab;
+            box-shadow: 0 0 5px #2e86ab;
+    border: 1px solid #2e86ab;
   }
   input::-webkit-input-placeholder {
     color: #363636;
@@ -296,7 +289,34 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   }
 }
 
+@media (min-width: 768px) {
+  input {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1080px) {
+  input {
+    width: 600px;
+  }
+}
+
 @media (min-width: 320px) {
+  .image-list-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   ul {
     list-style: none;
     margin: 0;
@@ -316,26 +336,44 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 1.8rem;
   }
   .download-link:visited {
-    color: #02020a;
+    color: #2f394d;
   }
 }
 
 @media (min-width: 768px) {
   .image-list-wrapper {
+    margin: 20px auto 0 auto;
+  }
+  ul {
     -webkit-column-count: 2;
             column-count: 2;
     -webkit-column-gap: 20px;
             column-gap: 20px;
-    margin: 0 auto;
   }
 }
 
 @media (min-width: 1080px) {
   .image-list-wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  ul {
     -webkit-column-count: 3;
             column-count: 3;
-    max-width: 810px;
-    width: 75%;
+    display: block;
+  }
+  ul li {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 2000px) {
+  .image-list-wrapper {
+    max-width: 1180px;
+  }
+  ul {
+    -webkit-column-count: 4;
+            column-count: 4;
   }
 }
 
