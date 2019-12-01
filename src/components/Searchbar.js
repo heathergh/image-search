@@ -11,7 +11,7 @@ class Searchbar extends Component {
     }
 
     // use user input to pass a query param to API call
-    searchForImages = (event) => {
+    searchForImages = event => {
         // this method is an onSubmit event handler, so must prevent default of page refresh
         event.preventDefault();
 
@@ -22,11 +22,12 @@ class Searchbar extends Component {
               Authorization: 'Client-ID c7e460e950c6ce50f9be85a30ccb19fb6ae9997faeea7dade15fdb1f30b331a8',
             },
             params: {
-              query: this.state.searchTerm
+            //   query: this.state.searchTerm
+              query: 'cat'
             }
           }).then(result => {
             
-            // function call that will update state in App
+            // function call that will update images state in App
             this.props.userSearchSubmit(result.data.results);
           }).catch(error => {
             console.error(`Something went wrong: ${error}`);
@@ -36,7 +37,7 @@ class Searchbar extends Component {
     // get the user input
     getUserInput = (event) => {
         event.preventDefault();    
-    // set query state for API call
+        // set state for query to use in API call
         if (event.target.value !== '') {
             this.setState({
                 searchTerm: event.target.value
@@ -46,13 +47,10 @@ class Searchbar extends Component {
 
     render() {
         return (
-            <div className="form-wrapper">
-                <form onSubmit={this.searchForImages}>
-                    <label htmlFor="search" className="visuallyHidden">What images do you want to search for?</label>
-                    <input id="search" onChange={this.getUserInput} placeholder="Search for an image"/>
-                </form>
-            </div>
-
+            <form className="form-wrapper" onSubmit={this.searchForImages}>
+                <label htmlFor="search" className="visuallyHidden">What images do you want to search for?</label>
+                <input id="search" onChange={this.getUserInput} placeholder="Search for an image"/>
+            </form>
         )
     }
 }

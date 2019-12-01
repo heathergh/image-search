@@ -1,0 +1,43 @@
+@import 'mixins';
+@import 'color_palette';
+
+@include mq-mobile {
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        
+        &:focus, &:active {
+            outline: none;
+            border: none;
+        }
+    }
+
+    label, input {
+        max-width: 810px;
+    }
+
+    input {
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        -ms-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
+        outline: none;
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid ;
+        border-radius: 8px;
+        height: 30px;
+        min-width: 280px;
+        max-width: 600px;
+        &:focus {
+            box-shadow: 0 0 5px $focusColor;
+            border: 1px solid $focusColor;
+        }
+        &::placeholder {
+            color: $placeholderFontColor;
+            font-size: $mobileFontSize;
+        }
+    }
+}

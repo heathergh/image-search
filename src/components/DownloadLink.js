@@ -2,7 +2,7 @@ import React from 'react';
 
 const DownloadLink = ({downloadUrl}) => {
     return (
-        <p><a href={`${downloadUrl}`}>Download Image</a></p>
+        <a className="download-link" download href={`${downloadUrl}?force=true`}>Download Original Image</a>
     )
 }
 

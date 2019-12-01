@@ -1,0 +1,41 @@
+@import 'mixins';
+@import 'color_palette';
+
+$mobileFontSize: 2rem;
+
+@include mq-mobile {
+    html {
+        font-size: 55%;
+        color: $defaultFontColor;
+    }
+    
+    body {
+        background: $offWhite;
+        margin: 20px;
+    }
+    
+    h1 {
+        font-family: 'Shrikhand', cursive;
+        font-size: 30px;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    label, input, input::placeholder, p {
+        font-size: $mobileFontSize;
+    }
+
+    label, input, a, p {
+        font-family: 'Karla', sans-serif;
+    }
+
+    .wrapper {
+        padding-top: 40px;
+    }
+}

@@ -2,14 +2,11 @@ import React from 'react';
 
 const ImageCard = ({id, url, alt, name, profileUrl}) => {
     return (
-      <>
-        <a href={`${url}`}>
-          <img src={`${url}`} alt={`${alt}`} id={id}/>
-        </a>
-        <p className="photo-credit">Photo by <a href={`${profileUrl}`}>{name}</a></p>
-      </>
+        <div className="card-wrapper">
+            <img src={`${url}`} alt={`${alt}`} id={id}/>
+            <p className="photo-credit"><a href={`${profileUrl}`} target="_blank" rel="noopener noreferrer">{name}</a></p>
+        </div>
     )
+}
 
-  }
-
-  export default ImageCard;
+export default ImageCard;
