@@ -14,6 +14,8 @@ class Searchbar extends Component {
     searchForImages = event => {
         // this method is an onSubmit event handler, so must prevent default of page refresh
         event.preventDefault();
+        
+        this.props.toggleLoader(true);
 
         axios({
             method: 'get',
@@ -24,10 +26,11 @@ class Searchbar extends Component {
             params: {
               query: this.state.searchTerm
             }
-          }).then(result => {
+          }).then(response => {
             
             // function call that will update images state in App
-            this.props.userSearchSubmit(result.data.results);
+            this.props.getImages(response.data.results);
+            this.props.toggleLoader(false);
           }).catch(error => {
             console.error(`Something went wrong: ${error}`);
           });
@@ -40,6 +43,8 @@ class Searchbar extends Component {
         if (event.target.value !== '') {
             this.setState({
                 searchTerm: event.target.value
+            }, () => {
+                this.props.getSearchTerm(this.state.searchTerm);
             })
         }
     }

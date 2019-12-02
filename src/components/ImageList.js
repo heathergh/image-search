@@ -4,7 +4,7 @@ import DownloadLink from './DownloadLink';
 
 const ImageList = props => {
     return (
-        <>
+        <ul>
             {props.searchResults.map((image, index) => {
                 return (
                     <li key={index}>
@@ -15,12 +15,12 @@ const ImageList = props => {
                             postUrl={image.links.html}
                             name={image.user.name}
                             profileUrl={image.user.links.html}
-                        />
+                            />
                         <DownloadLink downloadUrl={image.links.download}/>
                     </li>
                 )
             })}
-        </>
+        </ul>
     )
 }
 
