@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
-import concat from 'lodash/concat';
 import ImageList from './ImageList';
 import Searchbar from './Searchbar';
 import Loading from './Loading';
@@ -24,8 +23,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', debounce(this.fetchMoreImages, 100), true);
-        console.log("length of images: ", this.state.images.length);
+        window.addEventListener('scroll', debounce(this.fetchMoreImages, 150), true);
     }
 
     componentWillUnmount() {
@@ -48,9 +46,6 @@ class Main extends Component {
         const currentImages = [...this.state.images];
         const newImages = [...this.state.newImages]
 
-        const concatImages = concat(currentImages, newImages);
-        console.log("concatImages: ", concatImages);
-        
         this.setState({
             images: [...currentImages, ...newImages],
             pageCount: this.state.pageCount + 1
@@ -70,7 +65,6 @@ class Main extends Component {
     }
 
     setTotalPages = totalPages => {
-        console.log("total pages: ", totalPages)
         this.setState({
             pages: totalPages
         })
@@ -81,27 +75,6 @@ class Main extends Component {
             noResults: true,
             errorMessage: message
         })
-    }
-
-    validateResponse = () => {
-        // if page number result from api is equal to total number of pages, show message saying "no more content"
-        if (this.state.pages === this.state.pageCount) {
-            this.setState({
-                noResults: true,
-                errorMessage: "You've reached the end!"
-            });
-            console.log("you've reached the end");
-        } else if (this.state.pages === 0) {
-            this.setState({
-                noResults: true,
-                errorMessage: "There are no results for that search. Try searching for another image."
-            })
-            console.log("no results for that search");
-        } else {
-            this.setState({
-                noResults: false
-            })
-        }
     }
 
     fetchMoreImages = () => {
@@ -126,7 +99,7 @@ class Main extends Component {
                     }
                 });
             }).catch((error) => {
-                console.log(`Something went wrong: ${error}`);
+                console.error(`Something went wrong: ${error}`);
             });
         }
     }
@@ -140,7 +113,6 @@ class Main extends Component {
                 toggleLoader={this.toggleLoader}
                 getPages={this.setTotalPages}
                 numOfResults={this.state.perPage}
-                validateResponse={this.validateResponse}
                 noResultsState={this.state.noResults}
                 errorState={this.setErrorStates}
             />

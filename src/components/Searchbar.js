@@ -14,7 +14,6 @@ class Searchbar extends Component {
         this.props.renderImages();
     }
 
-    // pass user input as a query param in API call
     searchForImages = event => {
         // this method is an onSubmit event handler, so must prevent default of page refresh
         event.preventDefault();
@@ -32,16 +31,15 @@ class Searchbar extends Component {
                 method: 'get',
                 url: 'https://api.unsplash.com//search/photos',
                 headers: {
-                Authorization: 'Client-ID c7e460e950c6ce50f9be85a30ccb19fb6ae9997faeea7dade15fdb1f30b331a8',
+                    Authorization: 'Client-ID c7e460e950c6ce50f9be85a30ccb19fb6ae9997faeea7dade15fdb1f30b331a8',
                 },
                 params: {
-                query: this.state.searchTerm,
-                per_page: this.props.numOfResults
+                    query: this.state.searchTerm,
+                    per_page: this.props.numOfResults
                 }
             }).then(response => {
                 this.props.getPages(response.data.total_pages);
 
-                this.props.validateResponse();
                 // set the total number of pages
                 if (!this.props.noResults) {
                     this.props.getImages(response.data.results)
@@ -58,7 +56,7 @@ class Searchbar extends Component {
     // get the user input
     getUserInput = (event) => {
         event.preventDefault(); 
-        console.log(event.target.value);   
+
         // set state for query to use in API call
         if (event.target.value !== '') {
             this.setState({

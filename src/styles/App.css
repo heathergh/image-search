@@ -328,7 +328,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     transition: 2s;
   }
   .download-link {
-    padding-left: 18px;
+    margin-left: 18px;
     margin-top: 0;
     font-size: 1.8rem;
   }
