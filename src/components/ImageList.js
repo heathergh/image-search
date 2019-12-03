@@ -15,7 +15,7 @@ const ImageList = props => {
                             postUrl={image.links.html}
                             name={image.user.name}
                             profileUrl={image.user.links.html}
-                            />
+                        />
                         <DownloadLink downloadUrl={image.links.download}/>
                     </li>
                 )

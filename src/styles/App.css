@@ -244,7 +244,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
-    margin: 0;
+    margin: 0 0 20px 0;
   }
   .form-wrapper:focus, .form-wrapper:active {
     outline: none;
@@ -303,24 +303,19 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @media (min-width: 320px) {
   .image-list-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    margin: 0 auto;
+    -webkit-transition: 2000ms;
+    transition: 2000ms;
   }
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    -webkit-transition: 2s;
+    transition: 2s;
   }
   ul li {
     background: #f1f2eb;
@@ -329,6 +324,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     padding: 15px 0 15px 0;
     margin-bottom: 20px;
     width: 280px;
+    -webkit-transition: 2s;
+    transition: 2s;
   }
   .download-link {
     padding-left: 18px;
@@ -341,22 +338,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 @media (min-width: 768px) {
-  .image-list-wrapper {
-    margin: 20px auto 0 auto;
-  }
   ul {
     -webkit-column-count: 2;
             column-count: 2;
     -webkit-column-gap: 20px;
             column-gap: 20px;
   }
+  ul li {
+    display: inline-block;
+  }
 }
 
 @media (min-width: 1080px) {
-  .image-list-wrapper {
-    margin: 0 auto;
-    max-width: 800px;
-  }
   ul {
     -webkit-column-count: 3;
             column-count: 3;
@@ -368,9 +361,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 @media (min-width: 2000px) {
-  .image-list-wrapper {
-    max-width: 1180px;
-  }
   ul {
     -webkit-column-count: 4;
             column-count: 4;
