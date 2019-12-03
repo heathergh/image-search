@@ -2,16 +2,16 @@
 
 @include mq-mobile {
     .image-list-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        width: min-content;
+        margin: 0 auto;
+        transition: 2000ms;
     }
 
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
+        transition: 2s;
         li {
             background: $imageCardBackground;
             border: 1px solid $imageCardBorder;
@@ -19,10 +19,11 @@
             padding: 15px 0 15px 0;
             margin-bottom: 20px;
             width: 280px;
+            transition: 2s;
         }
     }
     .download-link {
-        padding-left: 18px;
+        margin-left: 18px;
         margin-top: 0;
         font-size: 1.8rem;
         &:visited {
@@ -32,21 +33,16 @@
 }
 
 @include mq-tablet {
-    .image-list-wrapper {
-        margin: 20px auto 0 auto;
-    }
     ul {
         column-count: 2;
         column-gap: 20px;
-        
+        li {
+            display: inline-block;
+        }
     }
 }
 
 @include mq-desktop {
-    .image-list-wrapper {
-        margin: 0 auto;
-        max-width: 800px;
-    }
     ul {
         column-count: 3;
         display: block;
@@ -57,9 +53,6 @@
 }
 
 @include mq-retina {
-    .image-list-wrapper {
-        max-width: 1180px;
-    }
     ul {
         column-count: 4;
     }
