@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/heather-hamilton-project-five/static/css/main.0c4f1579.chunk.css",
+    "main.js": "/heather-hamilton-project-five/static/js/main.0f06c1e6.chunk.js",
+    "main.js.map": "/heather-hamilton-project-five/static/js/main.0f06c1e6.chunk.js.map",
+    "runtime-main.js": "/heather-hamilton-project-five/static/js/runtime-main.211c0f16.js",
+    "runtime-main.js.map": "/heather-hamilton-project-five/static/js/runtime-main.211c0f16.js.map",
+    "static/js/2.c04624b9.chunk.js": "/heather-hamilton-project-five/static/js/2.c04624b9.chunk.js",
+    "static/js/2.c04624b9.chunk.js.map": "/heather-hamilton-project-five/static/js/2.c04624b9.chunk.js.map",
+    "index.html": "/heather-hamilton-project-five/index.html",
+    "precache-manifest.e41f60e8590c9f9cb7e0aad892f38194.js": "/heather-hamilton-project-five/precache-manifest.e41f60e8590c9f9cb7e0aad892f38194.js",
+    "service-worker.js": "/heather-hamilton-project-five/service-worker.js",
+    "static/css/main.0c4f1579.chunk.css.map": "/heather-hamilton-project-five/static/css/main.0c4f1579.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.211c0f16.js",
+    "static/js/2.c04624b9.chunk.js",
+    "static/css/main.0c4f1579.chunk.css",
+    "static/js/main.0f06c1e6.chunk.js"
+  ]
+}
