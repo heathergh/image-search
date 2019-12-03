@@ -38,6 +38,13 @@
             font-size: $mobileFontSize;
         }
     }
+
+    .error-input {
+        &:focus {
+            box-shadow: 0 0 5px $errorMessageColor;
+            border: 1px solid $errorMessageColor;
+        }
+    }
 }
            
 @include mq-tablet {

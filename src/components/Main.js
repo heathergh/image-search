@@ -17,16 +17,20 @@ class Main extends Component {
             pageCount: 2,
             pages: 0,
             perPage: 20,
-            noResults: false,
-            errorMessage: ''
+            results: false,
+            errorMessage: undefined,
+            formInputId: ''
         }
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', debounce(this.fetchMoreImages, 150), true);
+        // event listener to detect scroll events to bottom of page
+        // when user gets to bottom of page, call API to get more results
+        window.addEventListener('scroll', debounce(this.fetchMoreImages, 100), true);
     }
 
     componentWillUnmount() {
+        console.log("component will unmount called");
         window.removeEventListener('scroll', this.fetchMoreImages, true);
     }
 
@@ -45,7 +49,9 @@ class Main extends Component {
     updateImages = () => {
         const currentImages = [...this.state.images];
         const newImages = [...this.state.newImages]
-
+        
+        // reset images array to contain current images and new images
+        // increase page number so we get the next page of results
         this.setState({
             images: [...currentImages, ...newImages],
             pageCount: this.state.pageCount + 1
@@ -70,12 +76,36 @@ class Main extends Component {
         })
     }
 
-    setErrorStates = message => {
+    setErrorMessage = message => {
         this.setState({
-            noResults: true,
             errorMessage: message
         })
     }
+    
+/*** TODO: Fix the bug in this method
+    // validate response by checking current page number of results we're on compared with total number of pages
+    validateResponse = () => {
+
+        if (this.state.pages === this.state.pageCount) {
+            // if page number result from api is equal to total number of pages, show error message
+            this.setState({
+                results: false,
+                errorMessage: 'Error: No more search results.',
+                formInputId: 'search_error'
+            });
+        } else if (this.state.pages === 0) {
+            this.setState({
+                results: false,
+                errorMessage: 'Error: There are no results for that search. Try searching for other images.',
+                formInputId: 'search_error'
+            })
+        } else {
+            this.setState({
+                results: true
+            })
+        }
+    }
+****/
 
     fetchMoreImages = () => {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -96,10 +126,10 @@ class Main extends Component {
                 }, () => {
                     if (this.state.pageCount < this.state.pages) {
                         this.updateImages();
-                    }
+                    } 
                 });
             }).catch((error) => {
-                console.error(`Something went wrong: ${error}`);
+                console.error(`Something went wrong, here's the error message: ${error}`);
             });
         }
     }
@@ -113,13 +143,15 @@ class Main extends Component {
                 toggleLoader={this.toggleLoader}
                 getPages={this.setTotalPages}
                 numOfResults={this.state.perPage}
-                noResultsState={this.state.noResults}
-                errorState={this.setErrorStates}
+                validateResponse={this.validateResponse}
+                resultsState={this.state.results}
+                errorState={this.setErrorMessage}
+                handleErrorMessage={this.clearErrorMessage}
             />
             <section className="image-list-wrapper" >
                 { this.state.isLoading ? <Loading /> : <ImageList searchResults={this.state.images} /> }
                 
-                { this.state.errorMessage !== '' ? <ErrorMessage>{this.state.errorMessage}</ErrorMessage> : null}
+                { this.state.errorMessage !== undefined ? <ErrorMessage id={this.state.formInputId}>{this.state.errorMessage}</ErrorMessage> : null}
                 
                
             </section>

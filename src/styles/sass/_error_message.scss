@@ -1,7 +1,7 @@
 .error {
     background: $errorMessageBackground;
     padding: 5px 10px;
-    box-shadow: 0 0 0 1px $boxShadow inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px $errorMessageBoxShadow inset, 0 0 0 0 transparent;
     transition: opacity 500ms ease, color 500ms ease, background-color 500ms ease, box-shadow 500ms ease, -webkit-box-shadow 500ms ease;
     border-radius: 5px;
     

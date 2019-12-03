@@ -187,8 +187,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     color: #2f394d;
   }
   body {
-    background: #f18f01;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8e9eab), to(#eef2f3));
+    background: linear-gradient(#8e9eab, #eef2f3);
     margin: 20px;
+    height: 94vh;
   }
   h1 {
     font-family: 'Shrikhand', cursive;
@@ -231,7 +233,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: transparent;
-    text-shadow: 5px 20px #80ded9, 7px 23px #0d1321;
+    text-shadow: 5px 20px #485563, 7px 23px #ffffff;
   }
 }
 
@@ -286,6 +288,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   input::placeholder {
     color: #363636;
     font-size: 2rem;
+  }
+  .error-input:focus {
+    -webkit-box-shadow: 0 0 5px #9f3a38;
+            box-shadow: 0 0 5px #9f3a38;
+    border: 1px solid #9f3a38;
   }
 }
 
