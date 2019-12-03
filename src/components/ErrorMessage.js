@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ErrorMessage = (props) => {
+const ErrorMessage = props => {
     return (
-        <div>
+        <div className="error">
             <h2>
                 {props.children}
             </h2>
