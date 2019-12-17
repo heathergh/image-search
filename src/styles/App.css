@@ -187,8 +187,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     color: #2f394d;
   }
   body {
-    background: #f18f01;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8e9eab), to(#eef2f3));
+    background: linear-gradient(#8e9eab, #eef2f3);
     margin: 20px;
+    height: 100vh;
   }
   h1 {
     font-family: 'Shrikhand', cursive;
@@ -231,7 +233,23 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: transparent;
-    text-shadow: 5px 20px #80ded9, 7px 23px #0d1321;
+    text-shadow: 5px 20px #ffffff, 7px 23px #485563;
+  }
+  header p {
+    margin: 60px auto 0;
+    width: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  header p {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1080px) {
+  header p {
+    width: 600px;
   }
 }
 
