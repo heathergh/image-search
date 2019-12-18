@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/heather-hamilton-project-five/precache-manifest.9cec4b3d63f6b6c56c64b98d5d562e3c.js"
+  "/heather-hamilton-project-five/precache-manifest.2b6aa4f2d00b63864e43ba75f2468078.js"
 );
 
 self.addEventListener('message', (event) => {
