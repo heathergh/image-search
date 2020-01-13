@@ -117,11 +117,21 @@ class Main extends Component {
                 errorState={this.setErrorStates}
             />
             <section className="image-list-wrapper" >
-                { this.state.isLoading ? <Loading /> : <ImageList searchResults={this.state.images} /> }
+                {
+                this.state.isLoading
+                ?
+                    <Loading />
+                :
+                    <ImageList searchResults={this.state.images} />
+                }
                 
-                { this.state.errorMessage !== '' ? <ErrorMessage>{this.state.errorMessage}</ErrorMessage> : null}
-                
-               
+                {
+                    this.state.errorMessage !== ''
+                ?
+                    <ErrorMessage>{this.state.errorMessage}</ErrorMessage>
+                :
+                    null
+                }
             </section>
         </main>
         )
