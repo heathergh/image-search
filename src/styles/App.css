@@ -187,10 +187,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     color: #2f394d;
   }
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#8e9eab), to(#eef2f3));
-    background: linear-gradient(#8e9eab, #eef2f3);
+    background: -webkit-gradient(linear, left top, left bottom, from(#4c5867), to(#eef2f3));
+    background: linear-gradient(#4c5867, #eef2f3);
     margin: 20px;
-    min-height: 100vh;
+    min-height: calc(100vh - 40px);
   }
   h1 {
     font-family: 'Shrikhand', cursive;
@@ -202,6 +202,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   }
   a:hover {
     text-decoration: underline;
+  }
+  p {
+    color: #fefdff;
   }
   label, input, input::-webkit-input-placeholder, p {
     font-size: 2rem;
